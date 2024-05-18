@@ -1,42 +1,62 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-alias bi="brew install"
-alias bic="brew install --cask"
-alias bs="brew search"
-alias bup="brew upgrade"
-alias vim="nvim"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
+if [[ ! -d "$ZINIT_HOME" ]]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+
+source "$ZINIT_HOME/zinit.zsh"
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light Aloxaf/fzf-tab
+
+zinit load starship/starship
+
+
+
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
+
+# Add in Snippid
+zinit snippet OMZP::git
+zinit snippet OMZP::docker
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::sudo
+zinit snippet OMZP::command-not-found
+
+
+
+
+# History
+HISTSIZE=100000
+HISTFILE="$HOME/.zsh_history"
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt histignorealldups
+setopt histignoredups
 
 bindkey -s "^f" "search\n"
 
-
-source ~/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Load the theme.
-antigen theme awesomepanda
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle tmux
-
-#external package
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+# Complatetion Style
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
 
 
-antigen apply
+
+# Load completion
+autoload -U compinit && compinit
+
+zinit cdreplay -q
 
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red,bold"
-
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+alias vim="nvim"
+alias ls="ls --color"
 
 source $HOME/.env.local.sh
 
@@ -45,4 +65,4 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-PATH=~/.console-ninja/.bin:$PATH
+
