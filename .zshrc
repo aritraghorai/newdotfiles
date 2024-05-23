@@ -13,7 +13,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
 
-zinit load starship/starship
+
+zinit light starship/starship
 
 
 
@@ -66,4 +67,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export App="app"
 
+
+PATH=~/.console-ninja/.bin:$PATH
