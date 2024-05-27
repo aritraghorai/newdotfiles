@@ -17,7 +17,6 @@ return {
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.remote-development.distant-nvim" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
-  { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.colorscheme.rose-pine", opts = { colorscheme = "rose-pine" } },
 }
