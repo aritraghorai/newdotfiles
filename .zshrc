@@ -71,3 +71,4 @@ export App="app"
 
 
 PATH=~/.console-ninja/.bin:$PATH
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
