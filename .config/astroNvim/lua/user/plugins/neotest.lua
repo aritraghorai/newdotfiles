@@ -4,8 +4,9 @@ return {
     ft = { "go", "rust", "python", "javascript", "typescript", "java" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/nvim-nio",
       "nvim-neotest/neotest-go",
-      -- "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-python",
       "rouge8/neotest-rust",
       "haydenmeade/neotest-jest",
       "andy-bell101/neotest-java",
@@ -28,7 +29,7 @@ return {
         adapters = {
           require "neotest-go",
           require "neotest-rust",
-          -- require "neotest-python",
+          require "neotest-python",
           require "neotest-jest",
           require "neotest-java",
         },
