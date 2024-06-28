@@ -32,6 +32,7 @@
   "nui.nvim": { "branch": "main", "commit": "61574ce6e60c815b0a0c4b5655b8486ba58089a1" },
   "nvim-ansible": { "branch": "main", "commit": "7b1b994e4267b4c99045ef2798f7c12f326c2247" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
+  "nvim-colorizer.lua": { "branch": "master", "commit": "85855b38011114929f4058efc97af1059ab3e41d" },
   "nvim-jdtls": { "branch": "master", "commit": "40e8494e04c1bcd5dd6c0d0bc187d2d10965017d" },
   "nvim-lint": { "branch": "master", "commit": "efc6fc83f0772283e064c53a8f9fb5645bde0bc0" },
   "nvim-lspconfig": { "branch": "master", "commit": "1d2454f9fbb34206897b9a1b5e8b87d6418941ba" },
