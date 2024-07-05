@@ -21,6 +21,16 @@ zinit light starship/starship
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#dde4ce,fg+:#65ff05,bg:#10110f,bg+:#262626
+  --color=hl:#00db0f,hl+:#00ff08,info:#afaf87,marker:#87ff00
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf
+  --color=gutter:#2d2929,border:#3c6941,separator:#264a31,preview-fg:#40ff00
+  --color=label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt=">"
+  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+
 # Add in Snippid
 zinit snippet OMZP::git
 zinit snippet OMZP::docker
@@ -80,3 +90,5 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
