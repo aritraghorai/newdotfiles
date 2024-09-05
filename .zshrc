@@ -73,11 +73,13 @@ alias ls="ls --color"
 source $HOME/.env.local.sh
 
 export PATH=$HOME/.local/bin:$PATH
-# export ANDROID_HOME=$HOME/Android/Sdk
-# export PATH=$PATH:$ANDROID_HOME/emulator
-# export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export App="app"
+
+export Editor="nvim"
 
 
 PATH=~/.console-ninja/.bin:$PATH
