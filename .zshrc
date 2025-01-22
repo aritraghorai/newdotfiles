@@ -93,4 +93,7 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
+# Set-up icons for files/folders in terminal using eza
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
