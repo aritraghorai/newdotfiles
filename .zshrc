@@ -97,3 +97,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
+
+# bun completions
+[ -s "/home/aritra/.bun/_bun" ] && source "/home/aritra/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
