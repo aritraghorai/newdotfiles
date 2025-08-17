@@ -34,7 +34,7 @@ return {
           cmp.select_prev_item()
         elseif vim.snippet.active({ direction = -1 }) then
           vim.schedule(function()
-            vim.snippet.jump(-1)
+            vim.snippet.jump(1)
           end)
         else
           fallback()

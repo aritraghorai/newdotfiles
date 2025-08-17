@@ -73,9 +73,9 @@ alias ls="ls --color"
 source $HOME/.env.local.sh
 
 export PATH=$HOME/.local/bin:$PATH
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export App="app"
 
@@ -94,8 +94,26 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Set-up icons for files/folders in terminal using eza
-alias ls='eza -a --icons'
-alias ll='eza -al --icons'
+# alias ls='eza -a --icons'
+# alias ll='eza -al --icons'# study stream aliases
+
+# Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
+
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="10"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}m
+  spd-say "'$val' session done"
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
 alias lt='eza -a --tree --level=1 --icons'
 
 # bun completions
@@ -103,4 +121,18 @@ alias lt='eza -a --tree --level=1 --icons'
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
+GOPATH=$HOME/go PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/aritra/.opencode/bin:$PATH
+
+# Simple, bulletproof aliases
+alias wo='promo.js work'
+alias br='promo.js break'
+alias lb='promo.js longbreak'
+
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
