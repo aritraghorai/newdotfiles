@@ -17,6 +17,16 @@ return {
         "<cmd>Gwrite!<cr>",
         desc = "Git Write split",
       },
+      {
+        "<leader>gl",
+        "<cmd>Git log<cr>",
+        desc = "Git log",
+      },
+      {
+        "<leader>gp",
+        "<cmd>Git push<cr>",
+        desc = "Git push",
+      },
     },
   },
 }
