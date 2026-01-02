@@ -89,9 +89,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Set-up icons for files/folders in terminal using eza
 # alias ls='eza -a --icons'
@@ -136,3 +133,13 @@ alias lb='promo.js longbreak'
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
+# export JAVA_HOME=/home/aritra/Sdk/jdk-17.0.12
+# export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$HOME/Sdk/flutter/bin:$PATH"
+
+
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

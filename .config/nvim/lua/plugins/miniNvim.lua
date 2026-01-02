@@ -1,7 +1,7 @@
 return {
-  { "echasnovski/mini.nvim", version = "*" },
+  { "nvim-mini/mini.nvim", version = "*" },
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     opts = {},
     lazy = true,
     specs = {
